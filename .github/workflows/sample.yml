@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-commands:
-    runs-on: [self-hosted, metsel]
+    runs-on: [self-hosted,Linux,X64,metsl]
     
     steps:
     - name: Check out the code

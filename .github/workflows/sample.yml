@@ -18,5 +18,5 @@ jobs:
       run: |
         pwd
         ls -lrth
-        docker build -t sample-nginx . 
-        docker run -d -p 80:80 --name=sample-nginx sample-nginx
+        sudo docker build -t sample-nginx . 
+        sudo docker run -d -p 80:80 --name=sample-nginx sample-nginx

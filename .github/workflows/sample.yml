@@ -1,0 +1,22 @@
+name: Run Commands on Self-Hosted Runner
+
+on: 
+  push:
+    branches: 
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-commands:
+    runs-on: [self-hosted, metsel]
+    
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v3
+    
+    - name: Run commands
+      run: |
+        pwd
+        ls -lrth
+        docker build -t sample-nginx . 
+        docker run -d -p 80:80 --name=sample-nginx sample-nginx
